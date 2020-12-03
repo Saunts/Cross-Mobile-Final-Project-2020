@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background:#F2F2E6;">
+    <ion-buttons slot="start" style="color:#000000;">
+      <ion-back-button defaultHref="/profile/achievements"></ion-back-button>
+      <ion-title style="padding: 0;">Kembali</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <ion-grid>
+    <ion-row class="ion-align-items-center" style="margin-bottom: 20px;">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center">
+          <ion-text>
+            <h1><b><u>PRESTASI</u></b></h1>
+          </ion-text> 
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="padding-left: 10%; padding-right: 10%;">
+          <ion-avatar style="width: 100%; height: 100%;">
+            <ion-img src="assets/img/badge/{{PROVINCE}}.png" class="border-radius: 50px;"></ion-img>
+          </ion-avatar>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="padding-left: 10%; padding-right: 10%;">
+          <ion-text>
+            <h3>Anda telah menyelesaikan kuis untuk Provinsi {{province}} dengan nilai sempurna.</h3>
+          </ion-text>   
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" style="margin-top: 20px; margin-bottom: 50px;">
+      <ion-col class="ion-text-center">
+        <ion-button class="buttonStyle1" [routerLink]="['/profile/achievements']" color="primary">Unduh</ion-button>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-button class="buttonStyle1" [routerLink]="['/profile/achievements']" color="success">Bagikan</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

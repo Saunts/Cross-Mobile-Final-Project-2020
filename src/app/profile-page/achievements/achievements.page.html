@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background:#F2F2E6;">
+    <ion-buttons slot="start" style="color:#000000;">
+      <ion-back-button defaultHref="/main/menu"></ion-back-button>
+      <ion-title style="padding: 0;">Kembali</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <ion-grid>
+    <ion-row class="ion-align-items-center" style="margin-bottom: 20px;">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center">
+          <ion-text>
+            <h1><b><u>PRESTASI</u></b></h1>
+          </ion-text> 
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" style="padding-left: 5%; padding-right: 5%; padding-bottom: 50px;">
+      <ion-col size="4" class="ion-text-center" style="margin-bottom: 15px;" *ngFor="let unlocked of achievement_unlocked">
+        <div class="ion-text-center">
+          <ion-avatar style="width: 100%; height: 100%;">
+            <ion-img src="assets/img/badge/{{unlocked}}.png" routerLink="detail/{{unlocked}}" class="border-radius: 50px;"></ion-img>
+          </ion-avatar>
+        </div>
+      </ion-col>
+      <ion-col size="4" class="ion-text-center" style="margin-bottom: 15px;" *ngFor="let locked of achievement_locked">
+        <div class="ion-text-center">
+          <ion-avatar style="width: 100%; height: 100%;">
+            <ion-img src="assets/img/badge/UNKNOWN.png" class="border-radius: 50px;"></ion-img>
+          </ion-avatar>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

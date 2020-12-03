@@ -1,0 +1,82 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>insert-quiz</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="newQuiz(form)">
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Question Text</ion-label>
+        <ion-input placeholder="Quiz" ngModel inputmode="text" name="questionText" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Question Type</ion-label>
+        <ion-select value="trueorfalse" ngModel name="questionType" #typeCtrl="ngModel" required>
+          <ion-select-option value="1">True or False</ion-select-option>
+          <ion-select-option value="2">Susun Kata</ion-select-option>
+          <ion-select-option value="3">Pilihan Ganda</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Provinsi</ion-label>
+        <ion-input class="uppercase" placeholder="Jakarta" inputmode="text" ngModel name="provinsi" required #input (input)="input.value=$event.target.value.toUpperCase()"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="typeCtrl.value == '1'">
+        <ion-label>True or False</ion-label>
+        <ion-select value="trueorfalse" ngModel name="truefalseAnswer" #typeCtrl="ngModel" required>
+          <ion-select-option value="true">True</ion-select-option>
+          <ion-select-option value="false">False</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="typeCtrl.value == '2'">
+        <ion-label>Answer for Susun Huruf</ion-label>
+        <ion-input class="uppercase" value=null inputmode="text" ngModel name="susunAnswer" required #input (input)="input.value=$event.target.value.toUpperCase()"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="typeCtrl.value == '2'">
+        <ion-label>Choice for Susun Huruf</ion-label>
+        <ion-input class="uppercase" value=null inputmode="text" ngModel name="susunChoice" required #input (input)="input.value=$event.target.value.toUpperCase()"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="typeCtrl.value == '3'">
+        <ion-label>Answer for PG</ion-label>
+        <ion-input class="uppercase" value=null inputmode="text" ngModel name="pgAnswer" required #input (input)="input.value=$event.target.value.toUpperCase()"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="typeCtrl.value == '3'">
+        <ion-label>Choice for PG</ion-label>
+      </ion-item>
+      
+
+      <ion-item *ngIf="typeCtrl.value == '3'">
+        <ion-label>Choice #1</ion-label>
+        <ion-input class="uppercase" value=null inputmode="text" ngModel name="pgChoice1" required #input (input)="input.value=$event.target.value.toUpperCase()"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="typeCtrl.value == '3'">
+        <ion-label>Choice #2</ion-label>
+        <ion-input class="uppercase" value=null inputmode="text" ngModel name="pgChoice2" required #input (input)="input.value=$event.target.value.toUpperCase()"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="typeCtrl.value == '3'">
+        <ion-label>Choice #3</ion-label>
+        <ion-input class="uppercase" value=null inputmode="text" ngModel name="pgChoice3" required #input (input)="input.value=$event.target.value.toUpperCase()"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="typeCtrl.value == '3'">
+        <ion-label>Choice #4</ion-label>
+        <ion-input class="uppercase" value=null inputmode="text" ngModel name="pgChoice4" required #input (input)="input.value=$event.target.value.toUpperCase()"></ion-input>
+      </ion-item>
+
+  </ion-list>
+
+  <ion-button type="submit" [disabled]="!form.valid">Submit</ion-button>
+  </form>
+</ion-content>

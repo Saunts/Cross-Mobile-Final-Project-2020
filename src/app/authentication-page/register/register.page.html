@@ -1,0 +1,77 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content class="bg">
+  <ion-grid>
+    <ion-row class="ion-align-items-center" style="margin-bottom: 20px;">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center">
+          <ion-text>
+            <h1><b><u>DAFTAR AKUN</u></b></h1>
+          </ion-text> 
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="padding-left: 10%; padding-right: 10%;">
+          <ion-text>
+            <h3 style="margin-top: 0;"><b>Email</b></h3>
+          </ion-text>   
+          <ion-input class="wrap-input" style="text-align: center; margin: 0;" type="email" [(ngModel)]="email" required></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="padding-left: 10%; padding-right: 10%;">
+          <ion-text>
+            <h3 style="margin-top: 0;"><b>Kata Sandi</b></h3>
+          </ion-text>   
+          <ion-input class="wrap-input" style="text-align: center; margin: 0;" type="password" [(ngModel)]="password" required></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="padding-left: 10%; padding-right: 10%;">
+          <ion-text>
+            <h3 style="margin-top: 0;"><b>Konfirmasi Kata Sandi</b></h3>
+          </ion-text>   
+          <ion-input class="wrap-input" style="text-align: center; margin: 0;" type="password" [(ngModel)]="cpassword" required></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="padding-left: 10%; padding-right: 10%;">
+          <ion-text>
+            <h3 style="margin-top: 0;"><b>Kota Kelahiran</b></h3>
+          </ion-text>   
+          <ion-input class="wrap-input" style="text-align: center; margin: 0;" type="text" [(ngModel)]="birthplace" required></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="padding-left: 10%; padding-right: 10%;">
+          <ion-text>
+            <h3 style="margin-top: 0;"><b>Tanggal Lahir</b></h3>
+          </ion-text>   
+          <ion-input class="wrap-input" style="text-align: center; margin: 0;" type="date" [(ngModel)]="datebirth" required></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" style="margin-top: 20px;">
+      <ion-col class="ion-text-center">
+        <ion-button class="buttonStyle1" [routerLink]="['/auth/login']" color="danger">Batal</ion-button>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-button class="buttonStyle1" (click)="register()" color="success">Daftarkan</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

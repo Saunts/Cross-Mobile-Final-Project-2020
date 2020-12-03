@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background:#F2F2E6;">
+    <ion-buttons slot="start" style="color:#000000;">
+      <ion-back-button defaultHref="/main/play/island"></ion-back-button>
+      <ion-title style="padding: 0;">Kembali</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <ion-grid>
+    <ion-row class="ion-align-items-center" style="margin-bottom: 20px;">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center">
+          <ion-text>
+            <h1><b><u>PILIH PROVINSI</u></b></h1>
+          </ion-text> 
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" *ngFor="let unlocked of province_unlocked">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="margin-top: 5px; margin-bottom: 5px;">
+          <ion-button class="buttonStyle1" fill="solid" routerLink='/main/play/quiz/{{unlocked}}' color="success">{{unlocked}}</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" *ngFor="let locked of province_locked">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="margin-top: 5px; margin-bottom: 5px;">
+          <ion-button class="buttonStyle1" fill="solid" color="danger">{{locked}}</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="margin-top: 5px; margin-bottom: 5px;">
+          <ion-button class="buttonStyle1" fill="solid" routerLink="/main/play/JAKARTA" color="success">Jakarta</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="margin-top: 5px; margin-bottom: 5px;">
+          <ion-button class="buttonStyle1" fill="solid" routerLink="/main/play/JAWA_BARAT" color="success">Jawa Barat</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="margin-top: 5px; margin-bottom: 5px;">
+          <ion-button class="buttonStyle1" fill="solid" routerLink="/main/play/JAWA_TENGAH" color="success">Jawa Tengah</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="margin-top: 5px; margin-bottom: 5px;">
+          <ion-button class="buttonStyle1" fill="solid" routerLink="/main/play/YOGYAKARTA" color="success">Yogyakarta</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="margin-top: 5px; margin-bottom: 5px;">
+          <ion-button class="buttonStyle1" fill="solid" routerLink="/main/play/JAWA_TIMUR" color="success">Jawa Timur</ion-button>
+        </div>
+      </ion-col>
+    </ion-row> -->
+  </ion-grid>
+</ion-content>

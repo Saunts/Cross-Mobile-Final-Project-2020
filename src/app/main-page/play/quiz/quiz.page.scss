@@ -1,0 +1,38 @@
+.buttonStyle1{
+    --border-style: dashed;
+    width:125px; 
+    height: 40px;
+    font-size: 22px;
+    --border-radius: 10px;
+}
+
+.buttonStyle2{
+    width:50px; 
+    height: 50px;
+    font-weight: bold; 
+    margin: 0;
+}
+
+.center{
+    text-align:center;
+}
+
+.left{
+    text-align:left;
+}
+
+.right{
+    text-align: right;
+}
+
+.style1{
+    margin: 0;
+    padding: 0; 
+    background-color: transparent;  
+    border: transparent;
+    text-align:center;
+}
+
+.success-modal{
+    --background: transparent !important;
+}

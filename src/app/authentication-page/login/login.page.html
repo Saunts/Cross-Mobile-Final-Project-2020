@@ -1,0 +1,50 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content class="bg">
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="margin-top: 5px; margin-bottom: 5px;">
+          <ion-img src="assets/img/logo_kudayatara_title_transparent.png" style="height: 300px;"></ion-img>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <div class="ion-text-center" style="padding-left: 10%; padding-right: 10%;">
+          <ion-text>
+            <h3 style="margin-top: 0;"><b>Email</b></h3>
+          </ion-text>   
+          <ion-input class="wrap-input1" style="text-align: center; margin: 0;" type="email" [(ngModel)]="email" required></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">   
+        <div class="ion-text-center" style="padding-left: 10%; padding-right: 10%;">
+          <ion-text>
+            <h3 style="margin-top: 0;"><b>Kata Sandi</b></h3>
+          </ion-text>   
+          <ion-input class="wrap-input2" style="text-align: center; margin: 0" type="password" [(ngModel)]="password" required></ion-input>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" style="margin-top: 20px;">
+      <ion-col size="12" class="ion-text-center">   
+        <ion-button class="buttonStyle1" fill="solid" (click)="login()" color="success">Masuk</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center" style="margin-top: 20px;">
+      <ion-col class="ion-text-center">
+        <a href="/auth/register" style="color: #DC3545;"><b>Daftarkan Akun</b></a>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <a href="/auth/forgot-password" style="color: #DC3545;"><b>Lupa Kata Sandi?</b></a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

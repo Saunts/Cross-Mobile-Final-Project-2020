@@ -1,0 +1,21 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>{{correctFlag}}</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div *ngIf="correctFlag" class="container">
+    <div style="text-align: center;" class="vertical-center">
+      <ion-icon style="color: #00CC29; font-size: 128px;" name="checkmark"></ion-icon>
+      <ion-button size="large" fill="solid" style="font-weight: bold; --background: #00CC29;">Anda Benar!</ion-button>
+    </div>
+  </div>
+
+  <div *ngIf="!correctFlag" class="container">
+    <div style="text-align: center;" class="vertical-center">
+      <ion-icon style="color: #DC3545; font-size: 128px;" name="close"></ion-icon>
+      <ion-button size="large" fill="solid" style="font-weight: bold; --background: #DC3545;">Anda Salah!</ion-button>
+    </div>
+  </div>
+</ion-content>

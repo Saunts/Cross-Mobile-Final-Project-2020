@@ -1,0 +1,171 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background:#f2f2e6;">
+    <ion-buttons slot="end" style="color:#000000;">
+      <ion-text>
+        <h1 style="margin-right: 30px;"> {{counterText}} </h1>
+      </ion-text>    
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg">
+  <div (swipeleft)="handleSwipe($event)" (swiperight)="handleSwipe($event)" id="benar_salah" *ngIf="questionType == 1" style="height: 100%;">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12" class="ion-text-center">
+          <div class="ion-text-center">
+            <ion-text style="text-decoration: underline;">
+              <h1><b><u>BENAR / SALAH</u></b></h1>
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center" style="margin-top: 0; margin-bottom: 40px;">
+        <ion-col size="12" class="ion-text-center">
+          <div class="ion-text-center" style="padding-left: 5%; padding-right: 5%;">
+            <ion-text>
+              <h2>{{questionText}}</h2>
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center" style="margin-top: 100px;">
+        <ion-col class="ion-text-center">
+          <ion-text color="danger">
+            <h3><b>&#60; Salah</b></h3>
+          </ion-text>    
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <ion-text color="success">
+            <h3><b>Benar &#62;</b></h3>
+          </ion-text>    
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div id="susun_huruf" *ngIf="questionType == 2">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12" class="ion-text-center">
+          <div class="ion-text-center">
+            <ion-text style="text-decoration: underline;">
+              <h1><b><u>SUSUN HURUF</u></b></h1>
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center" style="margin-top: 0; margin-bottom: 40px;">
+        <ion-col size="12" class="ion-text-center">
+          <div class="ion-text-center" style="padding-left: 5%; padding-right: 5%;">
+            <ion-text>
+              <h2>{{questionText}}</h2>
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center ion-justify-content-between" style="margin-top: 0; margin-bottom: 40px; padding-left: 5%; padding-right: 5%;">
+        <ion-col class="ion-text-center center" *ngFor="let n of susunHuruf_totalAnswer; let i = index" style="padding: 2.5px;"> 
+          <ion-list class="style1 ion-text-center" style="height: 50px;" color="#f2f2e6">
+            <ion-item class="style1 ion-text-center" style="border-bottom: solid #000000; " color="#f2f2e6">
+              <ion-input class="style1 ion-text-center" style=" color: black;" disabled id="{{'letter' + i}}"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center ion-justify-content-center" style="margin-top: 0; margin-bottom: 40px; padding-left: 5%; padding-right: 5%;">
+        <ion-col class="ion-text-center" *ngFor="let n of susunHuruf_Choices; let i = index" style="margin-left: 0; margin-right: 0;"> 
+          <ion-button class="buttonStyle2" color="dark" (click)="handleSusunHurufAnswer($event)" id="{{i}}">{{n}}</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center" style="margin-top: 20px; margin-bottom: 50px; padding-left: 10%; padding-right: 10%;">
+        <ion-col class="ion-text-center">
+          <ion-button class="buttonStyle1" (click)="handleUlang()" color="danger">Ulang</ion-button>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <ion-button class="buttonStyle1" (click)="handleLanjut()" color="success">Jawab</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div id="pilihan_ganda" *ngIf="questionType == 3">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12" class="ion-text-center">
+          <div class="ion-text-center">
+            <ion-text style="text-decoration: underline;">
+              <h1><b><u>PILIHAN GANDA</u></b></h1>
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center" style="margin-top: 0; margin-bottom: 40px;">
+        <ion-col size="12" class="ion-text-center">
+          <div class="ion-text-center" style="padding-left: 5%; padding-right: 5%;">
+            <ion-text>
+              <h2>{{questionText}}</h2>
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center" style="margin-top: 0; margin-bottom: 40px;">
+        <ion-col size="12" class="ion-text-center">
+          <div class="ion-text-center" style="padding-left: 5%; padding-right: 5%;">
+            <form (ngSubmit)="handleLanjut()">
+              <ion-list class="style1" color="#f2f2e6" *ngFor="let n of pilihanGanda_Model; let i = index">
+                <ion-item color="#f2f2e6" lines="none">
+                  <ion-checkbox [(ngModel)]="n.value" (click)="handleMCAnswer(n)" slot="start" name="n.choice"></ion-checkbox>
+                  <ion-label class="ion-text-wrap" style="color: black;">{{n.choice}}</ion-label>
+                </ion-item>
+              </ion-list>
+              <ion-button class="buttonStyle1" style="margin-top: 60px; margin-bottom: 50px;" type="submit" color="success">Jawab</ion-button>
+            </form>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  
+  <!-- Score Page -->
+  <div id="score" *ngIf="questionType == 4">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12" class="ion-text-center">
+          <div class="ion-text-center">
+            <ion-text>
+              <h1><b>{{province}}</b></h1>
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center" style="margin-top: 0; margin-bottom: 40px;">
+        <ion-col size="12" class="ion-text-center">
+          <div class="ion-text-center">
+            <ion-text>
+              <h3 style=" font-weight: bold; text-decoration: underline;">Nilai Anda</h3>
+              <h3>{{scoreText}}</h3>
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center" style="margin-top: 0; margin-bottom: 40px; padding-left: 5%; padding-right: 5%;">
+        <ion-col size="12" class="ion-text-center" style="padding: 10px;">
+          <div *ngIf="isPassed" class="ion-text-center" style="border: 1px solid  #00CC29; background-color: white; border-radius: 10px;">
+            <h4 style="font-weight: bold; margin-top: 20px; margin-bottom: 10px;">Selamat!</h4>
+            <h4 style="font-weight: bold; margin-top: 10px; margin-bottom: 20px;">Provinsi baru telah dibuka</h4>
+          </div>
+          <div *ngIf="!isPassed" class="ion-text-center" style="border: 1px solid #DC3545; background-color: white; border-radius: 10px;">
+            <h4 style="font-weight: bold; margin-top: 20px; margin-bottom: 10px;">Maaf..</h4>
+            <h4 style="font-weight: bold; margin-top: 10px; margin-bottom: 20px;">Nilai Anda belum cukup untuk membuka provinsi baru</h4>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center" style="margin-top: 20px; margin-bottom: 50px;">
+        <ion-col class="ion-text-center">
+          <ion-button class="buttonStyle1" (click)="finishRoute()" color="success">Lanjut</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

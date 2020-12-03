@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kudayatara": {
+      "hosting": {
+        "app": [
+          "kudayatara"
+        ]
+      }
+    }
+  }
+}

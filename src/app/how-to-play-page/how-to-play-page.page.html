@@ -1,0 +1,157 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background:#F2F2E6;">
+    <ion-buttons slot="start" style="color:#000000;">
+      <ion-back-button defaultHref="/main/menu"></ion-back-button>
+      <ion-title style="padding: 0;">Kembali</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content class="bg">
+  <div *ngIf="page == 0">
+    <div class="ion-text-center" style="margin-top: 20px;">
+      <ion-text style="text-decoration: underline;">
+        <h1><b>CARA BERMAIN</b></h1>
+      </ion-text>   
+    </div>
+
+    <div class="ion-text-center" style="margin-top: 50px; width: 90%; margin-left: auto; margin-right: auto;">
+      <ion-text>
+        <h4>Untuk membuka Provinsi lainnya, pemain harus menyelesaikan permainan pada Provinsi yang telah terbuka dengan nilai minimal yang ditentukan.</h4>
+        <h4>Setiap Provinsi memiliki jumlah soal berserta nilai minimal yang berbeda.</h4>
+        <h4>Apabila pemain belum mendapatkan nilai minimal yang ditentukan, maka pemain dapat mengulangi permainan pada Provinsi tersebut.</h4>
+        <h4>Pemain yang telah mendapatkan nilai minimal masih dapat mengulangi permainan pada Provinsi tersebut.</h4>
+        <h4>Bagi pemain yang mendapatkan nilai sempurna, maka akan mendapatkan sebuah hadiah unik yang dapat dilihat pada menu Prestasi.</h4>
+      </ion-text>    
+    </div>
+
+    <div class="ion-text-center" style="margin-top: 50px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+          </ion-col>
+          <ion-col>
+            <ion-button class="buttonStyle1" (click)="handleLanjut()" color="success">Lanjut</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div *ngIf="page == 1">
+    <div class="ion-text-center" style="margin-top: 20px;">
+      <ion-text style="text-decoration: underline;">
+        <h1><b>CARA BERMAIN</b></h1>
+      </ion-text>   
+    </div>
+
+    <div class="ion-text-center" style="margin-top: 50px; width: 90%; margin-left: auto; margin-right: auto;">
+      <ion-text>
+        <h4>Terdapat 3 bentuk pertanyaan yang ada pada saat permainan berlangsung yaitu:</h4>
+        <h4><b>1. Bentuk pertanyaan benar atau salah</b></h4>
+        <h4><b>2. Bentuk permainan susun huruf</b></h4>
+        <h4><b>3. Bentuk pilihan berganda</b></h4>
+        <h4>Setiap permainan berlangsung, pemain akan mendapat bentuk pertanyaan secara acak.</h4>
+      </ion-text>    
+    </div>
+
+    <div class="ion-text-center" style="margin-top: 50px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button class="buttonStyle1" (click)="handleKembali()" color="danger">Kembali</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="buttonStyle1" (click)="handleLanjut()" color="success">Lanjut</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div *ngIf="page == 2">
+    <div class="ion-text-center" style="margin-top: 20px;">
+      <ion-text style="text-decoration: underline;">
+        <h1><b>CARA BERMAIN</b></h1>
+      </ion-text>   
+    </div>
+
+    <div class="ion-text-center" style="margin-top: 50px; width: 90%; margin-left: auto; margin-right: auto;">
+      <ion-text>
+        <h4><b>1. Bentuk pertanyaan benar atau salah</b></h4>
+        <h4>Pada kategori pertanyaan ini, sebuah pernyataan akan muncul, kemudian pemain dapat memberikan jawaban terkait benar atau salahnya pernyataan yang diberikan tersebut dengan memberikan <i>gesture</i> geser ke arah kiri atau kanan pada layar gawai yang digunakan.</h4>
+        <h4><i>Gesture</i> menggeser ke arah kiri memberikan jawaban salah, dan <i>gesture</i> menggeser ke arah kanan memberikan jawaban benar terhadap setiap pernyataan yang disajikan.</h4>
+      </ion-text>    
+    </div>
+    
+    <div class="ion-text-center" style="margin-top: 50px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button class="buttonStyle1" (click)="handleKembali()" color="danger">Kembali</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="buttonStyle1" (click)="handleLanjut()" color="success">Lanjut</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  
+  <div *ngIf="page == 3">
+    <div class="ion-text-center" style="margin-top: 20px;">
+      <ion-text style="text-decoration: underline;">
+        <h1><b>CARA BERMAIN</b></h1>
+      </ion-text>   
+    </div>
+    
+    <div class="ion-text-center" style="margin-top: 50px; width: 90%; margin-left: auto; margin-right: auto;">
+      <ion-text>
+        <h4><b>2. Bentuk permainan susun huruf</b></h4>
+        <h4>Pada kategori pertanyaan ini, sebuah pertanyaan akan muncul, kemudian pemain dapat memberikan jawaban dengan cara menyusun sejumlah huruf acak yang diberikan agar menjadi sebuah nama kabupaten atau kota tersebut.</h4>
+        <h4>Penyusunan huruf dapat dilakukan dengan menekan tombol - tombol huruf yang disediakan pada setiap pertanyaan.</h4>
+      </ion-text>    
+    </div>
+    
+    <div class="ion-text-center" style="margin-top: 50px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button class="buttonStyle1" (click)="handleKembali()" color="danger">Kembali</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="buttonStyle1" (click)="handleLanjut()" color="success">Lanjut</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  
+  <div *ngIf="page == 4">
+    <div class="ion-text-center" style="margin-top: 20px;">
+      <ion-text style="text-decoration: underline;">
+        <h1><b>CARA BERMAIN</b></h1>
+      </ion-text>   
+    </div>
+    
+    <div class="ion-text-center" style="margin-top: 50px; width: 90%; margin-left: auto; margin-right: auto;">
+      <ion-text>
+        <h4><b>3. Bentuk pilihan berganda</b></h4>
+        <h4>Pada kategori pertanyaan ini, sebuah pertanyaan akan muncul, kemudian pemain dapat memberikan jawaban dengan cara memilih satu dari empat pilihan jawaban yang disediakan.</h4>
+      </ion-text>    
+    </div>
+
+    <div class="ion-text-center" style="margin-top: 20px;">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button class="buttonStyle1" (click)="handleKembali()" color="danger">Kembali</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button class="buttonStyle1" (click)="handleLanjut()" color="success">Selesai</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
